@@ -198,9 +198,11 @@ RRD_update( char *rrd, const char *sum, const char *num, unsigned int process_ti
 
    /* If we are a host RRD, we "sum" over only one host. */
    if (num)
-      sprintf(val, "%u:%s:%s", process_time, sum, num);
+//      sprintf(val, "%u:%s:%s", process_time, sum, num);
+      sprintf(val, "%f:%s:%s", process_time, sum, num);
    else
-      sprintf(val, "%u:%s", process_time, sum);
+//      sprintf(val, "%u:%s", process_time, sum);
+      sprintf(val, "%f:%s", process_time, sum);
 
    argv[0] = "dummy";
    argv[1] = rrd;
